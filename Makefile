@@ -20,7 +20,7 @@ musl-root: sources
 	-mkdir musl-root
 	-mkdir musl-build
 	cd musl-build; \
-	../src/musl-src/configure --prefix="$(ROOT)/usr" --enabl-static --disable-dynamic
+	../src/musl-src/configure --prefix="$(ROOT)/usr" --enable-static --disable-shared
 	$(MAKE) -C musl-build -j$(PARALLELISM) install
 
 linux: sources musl-root
